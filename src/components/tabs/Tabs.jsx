@@ -13,7 +13,7 @@ import Isaac from "../Isaac/Isaac";
 import Harry from "../Harry/Harry";
 
 const Tabs = (props) => {
-  const [activeTab, setActiveTab] = useState("1");
+  const [activeTab, setActiveTab] = useState("2");
 
   const toggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
@@ -24,7 +24,7 @@ const Tabs = (props) => {
       <Nav tabs>
         <NavItem
           className={
-            activeTab === "1" ? "col-6 font-weight-bold" : "col-6 text-left"
+            activeTab === "1" ? "col-6 font-weight-bold" : "col-6"
           }
         >
           <NavLink
@@ -40,7 +40,7 @@ const Tabs = (props) => {
           className={
             activeTab === "2"
               ? "col-6 text-lg font-weight-bold"
-              : "col-6 text-right"
+              : "col-6"
           }
         >
           <NavLink
@@ -53,17 +53,17 @@ const Tabs = (props) => {
           </NavLink>
         </NavItem>
       </Nav>
-      <TabContent activeTab={activeTab}>
+      <TabContent activeTab={activeTab} className="col bg-dark">
         <TabPane tabId="1">
           <Row>
-            <Col sm="11">
+            <Col>
               <Harry />
             </Col>
           </Row>
         </TabPane>
         <TabPane tabId="2">
           <Row>
-            <Col sm="11">
+            <Col>
               <Isaac />
             </Col>
           </Row>
